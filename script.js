@@ -1,7 +1,7 @@
 // -----------------------------
 // Typing Animation for Intro
 // -----------------------------
-const introText = "I am Saksham, currently studying at SRM University AP pursuing B.Tech CSE AI/ML, building my personal brand, gaining skills to be the OG in the field. I also run a small tech agency, delivering full-hand websites and apps, open for everyone.";
+const introText = "Tech builder. AI learner. Founder in progress. Turning ideas into digital reality — one line of code at a time.";
 const typedIntro = document.getElementById("typed-intro");
 let charIndex = 0;
 
