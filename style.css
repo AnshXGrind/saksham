@@ -26,7 +26,7 @@ body {
 .nav-logo {
     font-size: 1.5rem;
     font-weight: bold;
-    background: linear-gradient(90deg, #ff0000, #ff7f00);
+    background: linear-gradient(90deg, #007AFF, #FF2D95);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -40,6 +40,27 @@ body {
     color: #fff;
 }
 
+/* Top quote shown below the navbar, centered in one line */
+.top-quote {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: Verdana, 'Verdana', Tahoma, sans-serif;
+    padding: 0.6rem 1rem;
+    background: transparent;
+    white-space: nowrap; /* keep it on one line */
+    overflow: hidden;
+    text-overflow: ellipsis; /* if too long for very small screens */
+    max-width: 100%;
+}
+
+@media (max-width: 520px) {
+    .top-quote {
+        font-size: 0.9rem;
+        padding: 0.45rem 0.6rem;
+    }
+}
+
 .nav-logo::before {
     content: "";
     position: absolute;
@@ -48,9 +69,9 @@ body {
     transform: translate(-50%, -50%);
     width: calc(100% + 24px);
     height: calc(100% + 10px);
-    background: radial-gradient(circle at 30% 30%, #00fff0, transparent 20%),
-                radial-gradient(circle at 70% 70%, #ff00ff, transparent 22%),
-                linear-gradient(90deg, rgba(0,255,240,0.08), rgba(255,0,255,0.08));
+    background: radial-gradient(circle at 30% 30%, #80D8FF, transparent 20%),
+                radial-gradient(circle at 70% 70%, #FFB0E6, transparent 22%),
+                linear-gradient(90deg, rgba(0,122,255,0.06), rgba(255,45,149,0.06));
     filter: blur(8px);
     border-radius: 6px;
     z-index: 0;
@@ -78,17 +99,17 @@ body {
 .insta-link {
     color: #fff;
     text-decoration: none;
-    background: linear-gradient(90deg, #ff007f, #ff7f00);
+    background: linear-gradient(90deg, #FF2D95, #007AFF);
     padding: 0.35rem 0.6rem;
     border-radius: 6px;
     font-weight: 600;
-    box-shadow: 0 4px 14px rgba(255,127,0,0.12);
+    box-shadow: 0 4px 14px rgba(0,122,255,0.12);
     transition: transform 0.15s, box-shadow 0.15s;
 }
 
 .insta-link:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(255,127,0,0.18);
+    box-shadow: 0 8px 28px rgba(0,122,255,0.18);
 }
 
 .nav-links li a {
@@ -99,7 +120,7 @@ body {
 
 .nav-links li a:hover,
 .nav-links li a.active {
-    color: #ff7f00;
+    color: #007AFF;
 }
 
 /* Hero Section */
@@ -126,7 +147,7 @@ body {
 .glow-text {
     font-size: 3rem;
     font-weight: bold;
-    background: linear-gradient(90deg, #ff0000, #ff7f00);
+    background: linear-gradient(90deg, #007AFF, #FF2D95);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -134,8 +155,8 @@ body {
 }
 
 @keyframes glow {
-    0% { text-shadow: 0 0 5px #ff0000, 0 0 10px #ff7f00; }
-    100% { text-shadow: 0 0 20px #ff0000, 0 0 40px #ff7f00; }
+    0% { text-shadow: 0 0 5px #007AFF, 0 0 10px #FF2D95; }
+    100% { text-shadow: 0 0 20px #007AFF, 0 0 40px #FF2D95; }
 }
 
 .instagram-handle {
@@ -151,11 +172,59 @@ body {
 }
 
 .hero-right .profile-pic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 300px; /* 1.5x of original 200px */
+    height: 300px;
+    border-radius: 18px; /* curved square */
     object-fit: cover;
-    border: 3px solid #ff7f00;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,122,255,0.12);
+    transition: transform 900ms cubic-bezier(.2,.9,.25,1), left 900ms ease, top 900ms ease;
+    will-change: transform, left, top;
+    position: relative; /* normal flow, will be overridden to fixed during animation */
+}
+
+/* Profile wrapper to hold dynamic glow/backlight */
+.profile-wrap {
+    position: relative;
+    display: inline-block;
+    padding: 12px; /* create space for glow */
+}
+
+.profile-wrap::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 80px);
+    height: calc(100% + 80px);
+    border-radius: 22px;
+    z-index: -1;
+    pointer-events: none;
+    transition: box-shadow 220ms ease, background 220ms ease, transform 220ms ease;
+    filter: blur(18px) saturate(120%);
+    /* dynamic colors controlled by JS via CSS variables */
+    background: radial-gradient(circle at var(--p-x, 35%) var(--p-y, 35%), var(--p-color-1, rgba(0,122,255,0.14)), var(--p-color-2, rgba(255,45,149,0.06)) 40%, transparent 65%);
+}
+
+/* Video unmute button (shown when autoplay with sound is blocked) */
+.video-unmute {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1100;
+    background: linear-gradient(90deg, #007AFF, #FF2D95);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .video-unmute { right: 12px; bottom: 12px; padding: 0.4rem 0.6rem; }
 }
 
 /* Gallery Section */
@@ -164,13 +233,56 @@ body {
     text-align: center;
 }
 
+/* Video section styling */
+.video-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-video {
+    width: 100%;
+    max-height: 56vh;
+    object-fit: cover;
+    display: block;
+}
+
+.video-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.35));
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .hero-video { max-height: 40vh; }
+}
+
 .section-title {
     font-size: 2rem;
     margin-bottom: 2rem;
-    background: linear-gradient(90deg, #ff0000, #ff7f00);
+    background: linear-gradient(90deg, #007AFF, #FF2D95);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Hide sections that should not be visible until triggered */
+.hidden-by-default {
+    display: none;
+    opacity: 0;
+    transition: opacity 240ms ease-in-out;
+}
+.hidden-by-default.show {
+    display: block;
+    opacity: 1;
 }
 
 .gallery-grid {
@@ -241,12 +353,40 @@ body {
     background-color: #1a1a1a;
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 0 10px #ff7f00;
+    box-shadow: 0 0 10px rgba(0,122,255,0.18);
+}
+
+.skill-image {
+    width: 100%;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.skill-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* shown when src is set */
+}
+
+.skill-image .skill-image-placeholder {
+    color: #bdbdbd;
+    font-size: 0.85rem;
+    text-transform: lowercase;
+    padding: 0 0.5rem;
+    text-align: center;
 }
 
 .skill-card h3 {
     margin-bottom: 1rem;
-    color: #ff7f00;
+    color: #007AFF;
 }
 
 .progress-bar {
@@ -259,7 +399,7 @@ body {
 
 .progress {
     height: 100%;
-    background: linear-gradient(90deg, #ff0000, #ff7f00);
+    background: linear-gradient(90deg, #007AFF, #FF2D95);
 }
 
 /* Instagram Section */
@@ -279,11 +419,11 @@ body {
     background-color: #1a1a1a;
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 0 10px #ff7f00;
+    box-shadow: 0 0 10px rgba(0,122,255,0.15);
 }
 
 .insta-card h3 {
-    color: #ff7f00;
+    color: #007AFF;
     margin-bottom: 0.5rem;
 }
 
@@ -317,7 +457,7 @@ body {
 }
 
 .social-column a:hover {
-    background: linear-gradient(90deg, rgba(255,0,150,0.12), rgba(0,255,200,0.08));
+    background: linear-gradient(90deg, rgba(255,45,149,0.12), rgba(0,122,255,0.08));
     transform: translateX(-4px);
 }
 
@@ -328,7 +468,7 @@ body {
 /* Bottom social connections area */
 .social-section {
     padding: 2rem 1rem;
-    background: linear-gradient(90deg, rgba(255,127,0,0.04), rgba(255,0,150,0.02));
+    background: linear-gradient(90deg, rgba(0,122,255,0.04), rgba(255,45,149,0.02));
     margin-top: 2rem;
 }
 
@@ -350,8 +490,72 @@ body {
 }
 
 .social-btn.twitter { background: linear-gradient(90deg, #1DA1F2, #0d8ae6); }
-.social-btn.instagram { background: linear-gradient(90deg, #f58529, #dd2a7b); }
+.social-btn.instagram { background: linear-gradient(90deg, #FF2D95, #FF8DCB); }
 .social-btn.linkedin { background: linear-gradient(90deg, #0077B5, #005582); }
+
+.social-handles {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-handles a {
+    color: #fff;
+    background: rgba(255,255,255,0.04);
+    padding: 0.35rem 0.6rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.social-handles a:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+
+/* Text hover glow and bubble effects */
+.text-glow-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.text-glow {
+    position: relative;
+    z-index: 2;
+    transition: text-shadow 120ms ease, color 120ms ease;
+}
+
+.text-glow.bright {
+    text-shadow: 0 2px 8px rgba(0,255,230,0.55), 0 6px 20px rgba(255,0,150,0.18);
+}
+
+.bubble {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(0.6);
+    filter: blur(14px) saturate(140%);
+    mix-blend-mode: screen;
+    animation: neon-rise 1600ms cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+@keyframes neon-rise {
+    0% {
+        transform: translate(-50%, -50%) scale(0.6);
+        opacity: 0.9;
+        filter: blur(8px) saturate(120%);
+    }
+    60% {
+        opacity: 0.7;
+        transform: translate(-50%, -90%) scale(1.05);
+        filter: blur(12px) saturate(140%);
+    }
+    100% {
+        transform: translate(-50%, -160%) scale(1.6);
+        opacity: 0;
+        filter: blur(20px) saturate(160%);
+    }
+}
 
 .insta-posts {
     display: flex;
@@ -396,8 +600,12 @@ body {
 }
 
 .contact-info a {
-    color: #ff7f00;
     text-decoration: none;
+    /* make contact accent follow the site theme (blue->pink gradient text) */
+    background: linear-gradient(90deg, #007AFF, #FF2D95);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .contact-form {
@@ -419,7 +627,7 @@ body {
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(90deg, #ff0000, #ff7f00);
+    background: linear-gradient(90deg, #007AFF, #FF2D95);
     color: #fff;
     cursor: pointer;
     transition: transform 0.3s;
@@ -427,6 +635,7 @@ body {
 
 .contact-form button:hover {
     transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,122,255,0.12);
 }
 
 /* Responsive */
@@ -499,3 +708,28 @@ body {
 @media (max-width: 480px) {
     .lightbox-close { top: -12px; right: -12px; width: 32px; height: 32px; }
 }
+
+/* Cursor-follow glow */
+.cursor-glow {
+    position: fixed;
+    pointer-events: none;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: radial-gradient(circle at 30% 30%, rgba(0,122,255,0.22), rgba(255,45,149,0.08) 40%, transparent 60%);
+    filter: blur(28px) saturate(120%);
+    z-index: 950;
+    opacity: 0;
+    transition: opacity 180ms ease, transform 220ms cubic-bezier(.2,.9,.25,1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cursor-glow { display: none; }
+}
+
+@media (max-width: 720px) {
+    .cursor-glow { width: 88px; height: 88px; filter: blur(22px); }
+}
+/* Temporary one-time invert theme (swap black/white) */
+

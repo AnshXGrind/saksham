@@ -19,6 +19,9 @@
         <!-- top-bar social removed per request -->
     </nav>
 
+    <!-- Centered quote below top bar -->
+    <div class="top-quote" aria-hidden="true">Documenting the journey. Building the future. Living it my way.</div>
+
     <section id="hero" class="hero">
         <div class="hero-content">
             <div class="hero-left">
@@ -29,12 +32,70 @@
                 </p>
             </div>
             <div class="hero-right">
-                <img src="assets/IMG_8115.jpg" alt="Saksham Garg" class="profile-pic">
+                <div class="profile-wrap">
+                    <img src="assets/IMG_8115.jpg" alt="Saksham Garg" class="profile-pic">
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="gallery-section">
+    <!-- Video section: plays continuously after page load -->
+    <section id="video" class="video-section" aria-label="Background video">
+        <video id="hero-video" class="hero-video" muted loop playsinline preload="metadata" poster="assets/video-poster.jpg">
+            <!-- Use web-relative path; URL-encode spaces. Place the file in assets/ -->
+            <source src="assets/intro%20of%20LifeDocAnsh.mp4" type="video/mp4">
+            <!-- Alternate file name without spaces if you prefer: assets/intro-of-LifeDocAnsh.mp4 -->
+            <!-- Fallback text -->
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-image" data-src="assets/data-5606639_1280.jpg" aria-hidden="true">
+                    <img src="assets/data-5606639_1280.jpg" alt="Web Development" />
+                </div>
+                <h3>Web Development</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-image" data-src="assets/istockphoto-1488173780-612x612.jpg" aria-hidden="true">
+                    <img src="assets/istockphoto-1488173780-612x612.jpg" alt="AI & ML" />
+                </div>
+                <h3>AI & ML</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-image" data-src="" aria-hidden="true">
+                    <span class="skill-image-placeholder">paste image path in data-src</span>
+                    <img alt="Python" />
+                </div>
+                <h3>Python</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 95%;"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-image" data-src="" aria-hidden="true">
+                    <span class="skill-image-placeholder">paste image path in data-src</span>
+                    <img alt="JavaScript" />
+                </div>
+                <h3>JavaScript</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <!-- Full Stack Dev and UI/UX Design removed per user request -->
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section hidden-by-default">
         <h2 class="section-title">My Gallery</h2>
         <div class="gallery-grid">
             <div class="gallery-item"><img src="assets/IMG_7666.jpeg" alt="Photo 1"></div>
@@ -43,48 +104,6 @@
             <div class="gallery-item"><img src="assets/IMG_7625.jpeg" alt="Photo 4"></div>
             <div class="gallery-item"><img src="assets/IMG_6949.jpg" alt="Photo 5"></div>
             <div class="gallery-item"><img src="assets/profile.JPG" alt="Photo 6"></div>
-        </div>
-    </section>
-
-    <section id="skills" class="skills-section">
-        <h2 class="section-title">My Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Web Development</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 90%;"></div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>AI & ML</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 85%;"></div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>Python</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 95%;"></div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>JavaScript</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 90%;"></div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>Full Stack Dev</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 80%;"></div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>UI/UX Design</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 75%;"></div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -98,7 +117,7 @@
                 <div class="insta-posts">
                     <img src="assets/IMG_8455.jpeg" alt="Post 1">
                     <img src="assets/IMG_8454.jpeg" alt="Post 2">
-                    <img src="assets/IMG_8453.jpeg" alt="Post 3">
+                   
                 </div>
             </div>
 
@@ -128,6 +147,7 @@
             <li><a href="https://twitter.com/your_twitter" target="_blank" rel="noopener noreferrer">Twitter</a></li>
             <li><a href="https://www.instagram.com/__saksham000/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             <li><a href="https://www.linkedin.com/in/your-linkedin/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </aside>
 
@@ -136,9 +156,6 @@
         <div class="contact-container">
             <div class="contact-info">
                 <p>Email: <a href="mailto:saksham@example.com">saksham@example.com</a></p>
-                <p>Instagram: <a href="https://www.instagram.com/__saksham000?igsh=NndzZTlkNDg1a2Fo&utm_source=qr" target="_blank">@__saksham000</a></p>
-                <p>Instagram: <a href="https://www.instagram.com/mulionsh_?igsh=MWQxNGZ2bGx2NTkzMQ%3D%3D&utm_source=qr " target="_blank">@mulionsh_</a></p>
-                <p>Instagram: <a href="https://www.instagram.com/lifedocansh?igsh=MXVtYW50cDVnZml4Nw%3D%3D&utm_source=qr " target="_blank">@lifedocansh</a></p>
             </div>
             <div class="contact-form">
                 <form>
@@ -156,7 +173,12 @@
         <div class="social-container">
             <a class="social-btn twitter" href="https://twitter.com/your_twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
             <a class="social-btn instagram" href="https://www.instagram.com/__saksham000/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a class="social-btn linkedin" href="https://www.linkedin.com/in/your-linkedin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="social-btn linkedin" href="https://www.linkedin.com/in/sakshamgrg?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+        <div class="social-handles">
+            <a href="https://www.instagram.com/__saksham000/" target="_blank" rel="noopener noreferrer">@__saksham000</a>
+            <a href="https://www.instagram.com/mulionsh_/" target="_blank" rel="noopener noreferrer">@mulionsh_</a>
+            <a href="https://www.instagram.com/lifedocansh/" target="_blank" rel="noopener noreferrer">@lifedocansh</a>
         </div>
     </section>
 
