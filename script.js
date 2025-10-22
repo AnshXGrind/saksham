@@ -202,9 +202,185 @@ function showGallery() {
     gallery.classList.add('show');
     // remove hidden-by-default display:none by toggling class
     gallery.classList.remove('hidden-by-default');
-    // smooth scroll into view
-    gallery.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // smooth scroll into view and focus the internal scroll area so users see the internal scrollbar
+    const viewport = gallery.querySelector('.gallery-viewport');
+    if (viewport) {
+        // ensure visible then focus so keyboard/scroll goes to the inner container
+        viewport.scrollTop = 0;
+        gallery.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // focus after a short delay to allow smooth scrolling to begin
+        setTimeout(() => { try { viewport.focus(); } catch (e) {} }, 450);
+    } else {
+        gallery.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
+
+// Close gallery: hide it (re-apply hidden-by-default)
+function closeGallery() {
+    const gallery = document.getElementById('gallery');
+    if (!gallery) return;
+    const viewport = gallery.querySelector('.gallery-viewport');
+    if (viewport) viewport.blur();
+    gallery.classList.add('hidden-by-default');
+    gallery.classList.remove('show');
+    // scroll back to top (optional) — keep current view
+}
+
+// Gallery size toggle: cycle between short/medium/tall
+function toggleGallerySize() {
+    const gallery = document.getElementById('gallery');
+    if (!gallery) return;
+    const viewport = gallery.querySelector('.gallery-viewport');
+    if (!viewport) return;
+    if (viewport.classList.contains('size-medium')) {
+        viewport.classList.remove('size-medium');
+        viewport.classList.add('size-tall');
+    } else if (viewport.classList.contains('size-tall')) {
+        viewport.classList.remove('size-tall');
+        viewport.classList.add('size-short');
+    } else {
+        viewport.classList.remove('size-short');
+        viewport.classList.add('size-medium');
+    }
+}
+
+// Wire up gallery control buttons and Esc-to-close
+document.addEventListener('DOMContentLoaded', () => {
+    const closeBtn = document.getElementById('gallery-close-btn');
+    const sizeBtn = document.getElementById('gallery-size-btn');
+    const gallery = document.getElementById('gallery');
+    if (closeBtn) closeBtn.addEventListener('click', (e) => { e.preventDefault(); closeGallery(); });
+    if (sizeBtn) sizeBtn.addEventListener('click', (e) => { e.preventDefault(); toggleGallerySize(); });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            // only close if gallery is visible
+            if (gallery && !gallery.classList.contains('hidden-by-default')) closeGallery();
+        }
+    });
+
+    // Arrow key navigation for horizontal gallery when focused
+    const viewport = document.querySelector('.gallery-viewport');
+    if (viewport) {
+        viewport.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                viewport.scrollBy({ left: 320, behavior: 'smooth' });
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                viewport.scrollBy({ left: -320, behavior: 'smooth' });
+            }
+        });
+    }
+    
+    // Background music control
+    const bgMusic = document.getElementById('bg-music');
+    const musicBtn = document.getElementById('site-music-btn');
+    if (musicBtn && bgMusic) {
+        // start paused and muted; user toggles playback
+        bgMusic.volume = 0.6;
+        bgMusic.muted = true;
+
+        musicBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const playing = musicBtn.getAttribute('aria-pressed') === 'true';
+            if (playing) {
+                // pause
+                try { bgMusic.pause(); } catch (err) {}
+                musicBtn.setAttribute('aria-pressed', 'false');
+                musicBtn.setAttribute('aria-label', 'Play background music');
+                musicBtn.querySelector('.music-play').style.display = '';
+                musicBtn.querySelector('.music-pause').style.display = 'none';
+            } else {
+                // play (unmute)
+                bgMusic.muted = false;
+                const p = bgMusic.play();
+                if (p && p.then) p.catch(() => {/* ignore */});
+                musicBtn.setAttribute('aria-pressed', 'true');
+                musicBtn.setAttribute('aria-label', 'Pause background music');
+                musicBtn.querySelector('.music-play').style.display = 'none';
+                musicBtn.querySelector('.music-pause').style.display = '';
+            }
+        });
+    }
+
+    // overlay play/pause (center of video) — wires to same bgMusic element
+    const overlayBtn = document.getElementById('video-overlay-play');
+    if (overlayBtn && bgMusic) {
+        overlayBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isPlaying = overlayBtn.getAttribute('aria-pressed') === 'true';
+            if (isPlaying) {
+                try { bgMusic.pause(); } catch (err) {}
+                overlayBtn.setAttribute('aria-pressed', 'false');
+                overlayBtn.setAttribute('aria-label', 'Play background music');
+                overlayBtn.textContent = '▶';
+                if (musicBtn) {
+                    musicBtn.setAttribute('aria-pressed', 'false');
+                    musicBtn.querySelector('.music-play').style.display = '';
+                    musicBtn.querySelector('.music-pause').style.display = 'none';
+                }
+            } else {
+                bgMusic.muted = false;
+                const p = bgMusic.play();
+                if (p && p.then) p.catch(() => {});
+                overlayBtn.setAttribute('aria-pressed', 'true');
+                overlayBtn.setAttribute('aria-label', 'Pause background music');
+                overlayBtn.textContent = '❚❚';
+                if (musicBtn) {
+                    musicBtn.setAttribute('aria-pressed', 'true');
+                    musicBtn.querySelector('.music-play').style.display = 'none';
+                    musicBtn.querySelector('.music-pause').style.display = '';
+                }
+            }
+        });
+    }
+
+    // When video unmute button toggles to unmuted, pause background music to avoid conflict
+    const videoUnmuteBtn = document.getElementById('video-unmute-btn');
+    const videoEl = document.getElementById('hero-video');
+    if (videoUnmuteBtn && bgMusic && videoEl) {
+        // observe clicks on the existing unmute button (it already toggles video.muted)
+        videoUnmuteBtn.addEventListener('click', () => {
+            // if video is now unmuted, pause bg music
+            if (!videoEl.muted) {
+                try { bgMusic.pause(); } catch (err) {}
+                if (overlayBtn) { overlayBtn.setAttribute('aria-pressed', 'false'); overlayBtn.textContent = '▶'; }
+                if (musicBtn) { musicBtn.setAttribute('aria-pressed', 'false'); musicBtn.querySelector('.music-play').style.display = ''; musicBtn.querySelector('.music-pause').style.display = 'none'; }
+            }
+        });
+    }
+
+    // Global click SFX for interactive buttons (exclude media controls to avoid feedback)
+    const clickSfx = document.getElementById('click-sfx');
+    let sfxLock = false;
+    function playClickSfx() {
+        if (!clickSfx) return;
+        if (sfxLock) return;
+        sfxLock = true;
+        try {
+            clickSfx.currentTime = 0;
+            clickSfx.play().catch(() => {});
+        } catch (err) {}
+        setTimeout(() => { sfxLock = false; }, 220);
+    }
+
+    // Attach delegated listener to body for buttons and links
+    document.body.addEventListener('pointerdown', (e) => {
+        const el = e.target.closest && e.target.closest('button, a');
+        if (!el) return;
+        // ignore the music and video controls and gallery controls
+        const excludeIds = ['site-music-btn', 'video-unmute-btn', 'gallery-close-btn', 'gallery-size-btn'];
+        if (el.id && excludeIds.includes(el.id)) return;
+        // don't play for form inputs
+        if (el.tagName.toLowerCase() === 'a' && el.href && el.target === '_blank') {
+            // let external links open; optionally play SFX
+            playClickSfx();
+            return;
+        }
+        playClickSfx();
+    }, { passive: true });
+});
 
 // hook up nav links
 document.querySelectorAll('.nav-links a').forEach(link => {
@@ -373,34 +549,49 @@ window.addEventListener('load', () => {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const vid = document.getElementById('hero-video');
+    const unmuteBtn = document.getElementById('video-unmute-btn');
     if (!vid) return;
 
-    // Try to autoplay unmuted (user asked to unmute). Browsers may block autoplay with sound.
-    vid.muted = false;
+    // Start muted and try to autoplay. Show persistent unmute control so user can enable audio.
+    vid.muted = true;
     const playAttempt = vid.play();
     if (playAttempt && playAttempt.then) {
-        playAttempt.then(() => {
-            // playing unmuted
-        }).catch((err) => {
-            // Autoplay with sound blocked. Fall back: mute and play, but show an unmute button.
-            console.warn('Autoplay with sound blocked, falling back to muted autoplay', err);
-            vid.muted = true;
-            const p2 = vid.play();
-            if (p2 && p2.then) p2.catch(() => {});
+        playAttempt.catch((err) => {
+            // Autoplay with muted video may still fail in some edge cases;
+            console.warn('Autoplay failed; user may need to interact to start media', err);
+        });
+    }
 
-            // show unmute button
-            let btn = document.querySelector('.video-unmute');
-            if (!btn) {
-                btn = document.createElement('button');
-                btn.className = 'video-unmute';
-                btn.textContent = 'Unmute Video';
-                document.querySelector('.video-section').appendChild(btn);
-                btn.addEventListener('click', () => {
-                    vid.muted = false;
-                    const p3 = vid.play();
-                    if (p3 && p3.then) p3.catch(() => {});
-                    btn.remove();
-                });
+    if (unmuteBtn) {
+        // Reflect initial state
+        unmuteBtn.setAttribute('aria-pressed', 'false');
+        const iconMuted = unmuteBtn.querySelector('.icon-muted');
+        const iconUnmuted = unmuteBtn.querySelector('.icon-unmuted');
+
+        function showMutedIcon(showMuted) {
+            if (iconMuted) iconMuted.style.display = showMuted ? '' : 'none';
+            if (iconUnmuted) iconUnmuted.style.display = showMuted ? 'none' : '';
+        }
+        // initial (muted)
+        showMutedIcon(true);
+
+        unmuteBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Toggle mute state
+            const nowMuted = vid.muted;
+            if (nowMuted) {
+                // Attempt to unmute and resume playback
+                vid.muted = false;
+                const p = vid.play();
+                if (p && p.then) p.catch(() => {/* ignore */});
+                unmuteBtn.setAttribute('aria-pressed', 'true');
+                unmuteBtn.setAttribute('aria-label', 'Mute video');
+                showMutedIcon(false);
+            } else {
+                vid.muted = true;
+                unmuteBtn.setAttribute('aria-pressed', 'false');
+                unmuteBtn.setAttribute('aria-label', 'Unmute video');
+                showMutedIcon(true);
             }
         });
     }
@@ -433,6 +624,74 @@ window.addEventListener('load', () => {
         wrap.style.removeProperty('--p-color-1');
         wrap.style.removeProperty('--p-color-2');
     });
+})();
+
+// Toggle bottom Instagram handles when the Instagram button is clicked
+(function bottomInstagramToggle() {
+    const instaBtn = document.getElementById('bottom-instagram-btn');
+    const showBtn = document.getElementById('show-handles-btn');
+    const handles = document.getElementById('bottom-social-handles');
+    if (!handles) return;
+
+    function reveal(showSourceBtn) {
+        const was = handles.classList.contains('revealed');
+        if (was) {
+            handles.classList.remove('revealed');
+            handles.classList.add('hidden-by-default');
+            handles.setAttribute('aria-hidden', 'true');
+            if (instaBtn) instaBtn.setAttribute('aria-expanded', 'false');
+            if (showBtn) showBtn.setAttribute('aria-expanded', 'false');
+        } else {
+            handles.classList.remove('hidden-by-default');
+            handles.classList.add('revealed');
+            handles.setAttribute('aria-hidden', 'false');
+            if (instaBtn) instaBtn.setAttribute('aria-expanded', 'true');
+            if (showBtn) showBtn.setAttribute('aria-expanded', 'true');
+            // add animate-handles so children animate; ensure it's applied after layout
+            handles.classList.add('animate-handles');
+            // smooth scroll into view
+            handles.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
+    if (instaBtn) {
+        instaBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            reveal(instaBtn);
+        });
+    }
+
+    if (showBtn) {
+        showBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            reveal(showBtn);
+        });
+    }
+
+    // Allow clicking outside the handles to close them
+    document.addEventListener('click', (e) => {
+        if (!handles.classList.contains('revealed')) return;
+        const within = handles.contains(e.target) || (instaBtn && instaBtn.contains(e.target)) || (showBtn && showBtn.contains(e.target));
+        if (!within) {
+            reveal();
+        }
+    });
+
+    // Auto-expand on touch devices or narrow screens for discoverability (mobile-first)
+    const isTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    const smallScreen = window.innerWidth <= 720;
+    if (isTouch || smallScreen) {
+        // reveal handles after a brief delay so layout stabilizes
+        setTimeout(() => {
+            if (!handles.classList.contains('revealed')) {
+                handles.classList.remove('hidden-by-default');
+                handles.classList.add('revealed');
+                handles.setAttribute('aria-hidden', 'false');
+                if (instaBtn) instaBtn.setAttribute('aria-expanded', 'true');
+                if (showBtn) showBtn.setAttribute('aria-expanded', 'true');
+            }
+        }, 350);
+    }
 })();
 
 // -----------------------------
