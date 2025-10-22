@@ -287,6 +287,72 @@ body {
     margin-bottom: 0.5rem;
 }
 
+/* Right-side fixed social column (Twitter/IG/LinkedIn) */
+.social-column {
+    position: fixed;
+    right: 12px;
+    top: 40%;
+    transform: translateY(-50%);
+    background: rgba(26,26,26,0.85);
+    border-radius: 8px;
+    padding: 0.5rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    z-index: 900;
+}
+
+.social-column ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.social-column a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.35rem 0.6rem;
+    border-radius: 6px;
+    transition: background 0.12s, transform 0.12s;
+}
+
+.social-column a:hover {
+    background: linear-gradient(90deg, rgba(255,0,150,0.12), rgba(0,255,200,0.08));
+    transform: translateX(-4px);
+}
+
+@media (max-width: 900px) {
+    .social-column { display: none; }
+}
+
+/* Bottom social connections area */
+.social-section {
+    padding: 2rem 1rem;
+    background: linear-gradient(90deg, rgba(255,127,0,0.04), rgba(255,0,150,0.02));
+    margin-top: 2rem;
+}
+
+.social-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-btn {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.social-btn.twitter { background: linear-gradient(90deg, #1DA1F2, #0d8ae6); }
+.social-btn.instagram { background: linear-gradient(90deg, #f58529, #dd2a7b); }
+.social-btn.linkedin { background: linear-gradient(90deg, #0077B5, #005582); }
+
 .insta-posts {
     display: flex;
     gap: 0.5rem;
