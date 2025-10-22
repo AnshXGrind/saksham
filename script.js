@@ -25,9 +25,9 @@ window.addEventListener("DOMContentLoaded", typeIntro);
 function updateInstagramData() {
     // Example structure
     const channels = [
-        { id: "mulionsh", followers: "12.3K", views: "45K" },
-        { id: "saksham000", followers: "20K", views: "60K" },
-        { id: "lifedocansh", followers: "8.5K", views: "25K" },
+        { id: "mulionsh", followers: "12", views: "10k" },
+        { id: "saksham000", followers: "230", views: "50K" },
+        { id: "lifedocansh", followers: "8", views: "500" },
     ];
 
     channels.forEach(channel => {
