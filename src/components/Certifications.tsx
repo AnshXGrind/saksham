@@ -7,6 +7,11 @@ import { portfolioData } from "@/data/portfolio";
 export default function Certifications() {
   const { certifications } = portfolioData;
 
+  // Don't render if no certifications
+  if (!certifications || certifications.length === 0) {
+    return null;
+  }
+
   return (
     <section id="certifications" className="relative bg-background">
       <div className="max-w-6xl mx-auto">
