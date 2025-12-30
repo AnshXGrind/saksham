@@ -1,0 +1,40 @@
+﻿
+FullName                                               Type 
+--------                                               ---- 
+D:\portfolio\saksham\public                            Fo...
+D:\portfolio\saksham\src                               Fo...
+D:\portfolio\saksham\.eslintrc.json                    File 
+D:\portfolio\saksham\.gitignore                        File 
+D:\portfolio\saksham\COMPLETE-FILE-LIST.txt            File 
+D:\portfolio\saksham\CUSTOMIZATION.md                  File 
+D:\portfolio\saksham\DEPLOYMENT.md                     File 
+D:\portfolio\saksham\MOVED-TO-SAKSHAM.txt              File 
+D:\portfolio\saksham\next-env.d.ts                     File 
+D:\portfolio\saksham\next.config.mjs                   File 
+D:\portfolio\saksham\package.json                      File 
+D:\portfolio\saksham\postcss.config.mjs                File 
+D:\portfolio\saksham\PROJECT-STRUCTURE.txt             File 
+D:\portfolio\saksham\README.md                         File 
+D:\portfolio\saksham\SETUP.md                          File 
+D:\portfolio\saksham\START-HERE.txt                    File 
+D:\portfolio\saksham\tailwind.config.ts                File 
+D:\portfolio\saksham\tsconfig.json                     File 
+D:\portfolio\saksham\public\README.md                  File 
+D:\portfolio\saksham\src\app                           Fo...
+D:\portfolio\saksham\src\components                    Fo...
+D:\portfolio\saksham\src\data                          Fo...
+D:\portfolio\saksham\src\app\globals.css               File 
+D:\portfolio\saksham\src\app\layout.tsx                File 
+D:\portfolio\saksham\src\app\page.tsx                  File 
+D:\portfolio\saksham\src\components\About.tsx          File 
+D:\portfolio\saksham\src\components\Certifications.tsx File 
+D:\portfolio\saksham\src\components\Contact.tsx        File 
+D:\portfolio\saksham\src\components\Hackathons.tsx     File 
+D:\portfolio\saksham\src\components\Hero.tsx           File 
+D:\portfolio\saksham\src\components\Projects.tsx       File 
+D:\portfolio\saksham\src\components\Research.tsx       File 
+D:\portfolio\saksham\src\components\Skills.tsx         File 
+D:\portfolio\saksham\src\data\portfolio.ts             File 
+
+
+

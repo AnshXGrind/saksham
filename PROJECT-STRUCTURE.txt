@@ -1,0 +1,63 @@
+﻿AI-PORTFOLIO PROJECT STRUCTURE
+================================
+
+ai-portfolio/
+
+  public/                    # Static assets
+    README.md                 # Instructions for resume.pdf
+
+  src/
+     app/                   # Next.js App Router
+       globals.css           # Global styles & fonts
+       layout.tsx            # Root layout with metadata
+       page.tsx              # Home page (combines all sections)
+   
+     components/            # React components
+       Hero.tsx              #  Hero section with CTA
+       About.tsx             # About me section
+       Skills.tsx            # Tech stack grid
+       Projects.tsx          # Filterable projects showcase
+       Hackathons.tsx        # Timeline of achievements
+       Certifications.tsx    # Courses & certifications
+       Research.tsx          # Research interests
+       Contact.tsx           # Social links & contact
+   
+     data/
+        portfolio.ts          #  YOUR DATA - Edit this!
+
+  Configuration Files
+    package.json              # Dependencies & scripts
+    tsconfig.json             # TypeScript configuration
+    tailwind.config.ts        #  Theme colors & styling
+    postcss.config.mjs        # PostCSS config
+    next.config.mjs           # Next.js config
+    .eslintrc.json            # ESLint rules
+    .gitignore                # Git ignore file
+    next-env.d.ts             # Next.js types
+
+  Documentation
+     README.md                 # Main readme
+     QUICKSTART.md             #  5-minute setup guide
+     SETUP.md                  # Detailed setup instructions
+     CUSTOMIZATION.md          # How to customize everything
+     DEPLOYMENT.md             # Deployment to Vercel/Netlify
+
+================================
+KEY FILES TO EDIT:
+================================
+
+1. src/data/portfolio.ts          YOUR CONTENT
+2. tailwind.config.ts              YOUR COLORS
+3. public/resume.pdf               YOUR RESUME
+
+================================
+COMMANDS:
+================================
+
+npm install          # Install dependencies
+npm run dev          # Start dev server (http://localhost:3000)
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run linter
+
+================================
