@@ -46,10 +46,14 @@ export default function Hero() {
               � AI/ML Engineer → Quant Developer
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight">
               <span className="block">{hero.headline}</span>
-              <span className="block gradient-text mt-2 animate-gradient">{hero.subheadline}</span>
+              <span className="block gradient-text mt-2 animate-gradient text-5xl sm:text-6xl md:text-7xl lg:text-8xl">{hero.subheadline}</span>
             </h1>
+
+            <p className="text-xl sm:text-2xl text-primary/80 mb-6 font-mono">
+              {hero.tagline}
+            </p>
 
             <p className="text-lg sm:text-xl text-muted mb-8 leading-relaxed">
               {hero.description}

@@ -2,7 +2,8 @@ export const portfolioData = {
   // Hero Section
   hero: {
     headline: "Hi, I'm Saksham",
-    subheadline: "Vibe Coder → Quant Developer",
+    subheadline: "AI/ML Engineer",
+    tagline: "Vibe Coder → Quant Developer",
     description: "Built 15+ full end-to-end projects. Currently mastering Python, ML fundamentals, and quantitative finance to build intelligent trading systems.",
     cta: {
       primary: "View Projects",
