@@ -43,7 +43,7 @@ export default function Hero() {
               transition={{ delay: 0.2 }}
               className="inline-block px-4 py-2 mb-6 text-sm font-mono border border-primary/30 rounded-full bg-primary/10"
             >
-              🚀 Available for Work
+              � AI/ML Engineer → Quant Developer
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">

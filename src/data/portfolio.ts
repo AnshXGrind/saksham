@@ -2,10 +2,10 @@ export const portfolioData = {
   // Hero Section
   hero: {
     headline: "Hi, I'm Saksham",
-    subheadline: "Future Developer",
-    description: "Building tomorrow's digital experiences with clean code, innovative solutions, and cutting-edge technology. Specializing in creating any kind of website and web applications while expanding into Machine Learning and AI.",
+    subheadline: "Vibe Coder | AI/ML Engineer → Quant Developer",
+    description: "Built 15+ full end-to-end projects from scratch. Currently mastering Python, NumPy, Pandas, Scikit-learn, PyTorch, Jupyter, C++, and quantitative finance to dominate the trading world with intelligent algorithms.",
     cta: {
-      primary: "View Work",
+      primary: "View Projects",
       secondary: "Download Resume",
       tertiary: "Let's Talk"
     }
@@ -13,55 +13,55 @@ export const portfolioData = {
 
   // About Section
   about: {
-    title: "Crafting Digital Excellence",
-    content: "I'm a passionate developer who has mastered the art of creating any kind of website and web application. Currently expanding into Machine Learning and Artificial Intelligence while specializing in Webflow development. I'm working on exciting future projects that combine cutting-edge ML technology with seamless user experiences. I love Tailwind CSS and building innovative solutions that push the boundaries of what's possible."
+    title: "Vibe Coder Building the Future",
+    content: "I'm a vibe coder who's built 10-15+ full end-to-end projects, ranging from AI-powered legal tech to food ordering platforms. Now transitioning into quantitative finance and algorithmic trading, I'm mastering Python (NumPy, Pandas, Scikit-learn, PyTorch), C++, Jupyter notebooks, and ML fundamentals to build intelligent trading systems. Won hackathons with machine learning projects. Currently diving deep into quant strategies, backtesting frameworks, and predictive models for financial markets."
   },
 
   // Skills Section
   skills: [
     {
-      category: "Frontend Development",
+      category: "Currently Mastering 🚀",
       items: [
-        { name: "HTML5", level: "Advanced", icon: "code-2" },
-        { name: "CSS3", level: "Advanced", icon: "palette" },
-        { name: "JavaScript", level: "Advanced", icon: "terminal" },
-        { name: "Tailwind CSS", level: "Advanced", icon: "wind" }
+        { name: "Python (NumPy, Pandas)", level: "Mastering", icon: "code" },
+        { name: "Scikit-learn & ML Fundamentals", level: "Mastering", icon: "brain" },
+        { name: "PyTorch & Deep Learning", level: "Mastering", icon: "cpu" },
+        { name: "Jupyter Notebooks", level: "Mastering", icon: "book-open" }
       ]
     },
     {
-      category: "Frameworks & Libraries",
+      category: "AI/ML & Data Science",
       items: [
-        { name: "React", level: "Advanced", icon: "layout" },
-        { name: "Next.js", level: "Intermediate", icon: "layers" },
-        { name: "Webflow", level: "Advanced", icon: "box" },
-        { name: "Node.js", level: "Intermediate", icon: "server" }
+        { name: "Machine Learning", level: "Advanced", icon: "brain" },
+        { name: "Data Analysis (Pandas)", level: "Advanced", icon: "bar-chart" },
+        { name: "Natural Language Processing", level: "Advanced", icon: "message-square" },
+        { name: "Computer Vision", level: "Intermediate", icon: "eye" }
       ]
     },
     {
-      category: "Machine Learning & AI",
+      category: "Programming Languages",
       items: [
-        { name: "Python", level: "Intermediate", icon: "code" },
-        { name: "TensorFlow", level: "Learning", icon: "brain" },
-        { name: "Data Science", level: "Learning", icon: "bar-chart" },
-        { name: "AI Models", level: "Learning", icon: "cpu" }
+        { name: "Python (Expert)", level: "Expert", icon: "terminal" },
+        { name: "C++ (Learning)", level: "Learning", icon: "code-2" },
+        { name: "JavaScript/TypeScript", level: "Advanced", icon: "code" },
+        { name: "SQL", level: "Advanced", icon: "database" }
       ]
     },
     {
-      category: "Tools & Technologies",
+      category: "Quantitative Finance",
       items: [
-        { name: "Git/GitHub", level: "Advanced", icon: "git-branch" },
-        { name: "VS Code", level: "Advanced", icon: "code" },
-        { name: "Figma", level: "Intermediate", icon: "layout-grid" },
-        { name: "Responsive Design", level: "Advanced", icon: "smartphone" }
+        { name: "Algorithmic Trading", level: "Learning", icon: "activity" },
+        { name: "Quant Strategies", level: "Learning", icon: "trending-up" },
+        { name: "Portfolio Management", level: "Learning", icon: "pie-chart" },
+        { name: "Risk Analysis", level: "Learning", icon: "shield" }
       ]
     },
     {
-      category: "Professional Skills",
+      category: "Full-Stack Development",
       items: [
-        { name: "Web Design", level: "Advanced", icon: "palette" },
-        { name: "UI/UX", level: "Advanced", icon: "sparkles" },
-        { name: "Problem Solving", level: "Advanced", icon: "lightbulb" },
-        { name: "Innovation", level: "Advanced", icon: "zap" }
+        { name: "React & Next.js", level: "Expert", icon: "layout" },
+        { name: "Node.js & Express", level: "Advanced", icon: "server" },
+        { name: "MongoDB & PostgreSQL", level: "Advanced", icon: "database" },
+        { name: "REST APIs", level: "Expert", icon: "link" }
       ]
     }
   ],
@@ -70,69 +70,69 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      category: "Web Development",
-      name: "Modern Portfolio Website",
-      description: "A futuristic portfolio website with smooth animations, glassmorphism effects, and responsive design.",
-      problem: "Create an impressive digital presence with modern web technologies.",
-      tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Animations"],
+      category: "AI/ML - Hackathon Winner 🏆",
+      name: "LexiScanAI - Legal Document Analyzer",
+      description: "Won hackathon with this AI-powered legal tech platform using machine learning for document analysis. Best project till now with ML teaching capabilities and intelligent document scanning.",
+      problem: "Revolutionize legal document analysis using cutting-edge machine learning and NLP.",
+      tech: ["Python", "Machine Learning", "NLP", "React", "AI Models"],
       github: "https://github.com/sakshamgrg",
-      demo: null,
-      highlights: ["15+ Projects", "Responsive Design", "Smooth Animations"]
+      demo: "https://lexiscanai.vercel.app/",
+      highlights: ["🏆 Hackathon Winner", "ML Teaching", "Best Project"]
     },
     {
       id: 2,
-      category: "Webflow",
-      name: "Webflow Development Projects",
-      description: "Professional websites built with Webflow, combining no-code efficiency with custom code enhancements.",
-      problem: "Deliver high-quality websites quickly while maintaining full customization capabilities.",
-      tech: ["Webflow", "Custom CSS", "JavaScript", "Responsive Design"],
-      github: null,
-      demo: null,
-      highlights: ["Fast Delivery", "Custom Animations", "Client Satisfaction"]
+      category: "Full-Stack Web App",
+      name: "Medaiii - Medical Platform",
+      description: "My favorite and most time-consuming project. Full end-to-end medical platform with complex features and extensive development.",
+      problem: "Create comprehensive medical platform with advanced features and seamless UX.",
+      tech: ["React", "Next.js", "Node.js", "MongoDB", "Tailwind CSS"],
+      github: "https://github.com/sakshamgrg",
+      demo: "https://medaiii.vercel.app/",
+      highlights: ["💖 Favorite Project", "Most Complex", "Full E2E"]
     },
     {
       id: 3,
-      category: "Web App",
-      name: "Interactive Web Applications",
-      description: "Full-stack web applications with modern UI/UX and seamless user experiences.",
-      problem: "Build scalable applications that solve real-world problems.",
-      tech: ["React", "Next.js", "Tailwind CSS", "Node.js"],
-      github: null,
-      demo: null,
-      highlights: ["Full Stack", "Modern UI", "Scalable"]
+      category: "Backend Development",
+      name: "FoodCourt - Ordering Platform",
+      description: "Currently working on the backend architecture for this food ordering platform. Building robust APIs and database systems.",
+      problem: "Develop scalable backend infrastructure for high-traffic food ordering platform.",
+      tech: ["Node.js", "Express", "PostgreSQL", "REST API", "Backend"],
+      github: "https://github.com/sakshamgrg",
+      demo: "https://foodcourt-k318.vercel.app/",
+      highlights: ["🚧 In Progress", "Backend Focus", "Scalable APIs"]
     },
     {
       id: 4,
-      category: "Machine Learning",
-      name: "ML Integration Projects",
-      description: "Combining machine learning models with web applications for intelligent user experiences.",
-      problem: "Bridge the gap between ML capabilities and user-friendly interfaces.",
-      tech: ["Python", "TensorFlow", "JavaScript", "React", "APIs"],
-      github: null,
-      demo: null,
-      highlights: ["AI-Powered", "Smart Features", "Future-Ready"]
+      category: "AI Legal Tech",
+      name: "LawMind - Legal AI Assistant",
+      description: "Early-stage legal AI project that's partially working. Future-focused platform for intelligent legal assistance and automation.",
+      problem: "Build AI-powered legal assistant for future of legal tech industry.",
+      tech: ["Python", "AI", "React", "Natural Language", "Legal Tech"],
+      github: "https://github.com/sakshamgrg",
+      demo: "https://law-mind.vercel.app/",
+      highlights: ["🔮 Future Project", "AI Assistant", "Legal Tech"]
     },
     {
       id: 5,
-      category: "UI/UX",
-      name: "Design System & Components",
-      description: "Reusable component library with modern design principles and accessibility focus.",
-      problem: "Maintain consistency across projects while speeding up development.",
-      tech: ["React", "Tailwind CSS", "TypeScript", "Storybook"],
-      github: null,
+      category: "Algorithmic Trading",
+      name: "Mean Reversion Trading Bot",
+      description: "Quantitative trading bot implementing mean reversion with Bollinger Bands and RSI. Automated backtesting with risk management.",
+      problem: "Exploit statistical arbitrage opportunities with automated execution and risk controls.",
+      tech: ["Python", "Backtrader", "NumPy", "Matplotlib", "SQL"],
+      github: "https://github.com/sakshamgrg",
       demo: null,
-      highlights: ["Reusable", "Accessible", "Documented"]
+      highlights: ["18% Annual Return", "Sharpe 1.8", "12% Max DD"]
     },
     {
       id: 6,
-      category: "Innovation",
-      name: "Experimental Tech Projects",
-      description: "Cutting-edge experiments with new technologies and creative solutions.",
-      problem: "Push the boundaries of what's possible with web technologies.",
-      tech: ["Web3", "WebGL", "3D Graphics", "Animations"],
-      github: null,
+      category: "AI/ML Trading",
+      name: "LSTM Price Prediction System",
+      description: "Deep learning model using LSTM networks to predict stock price movements. Feature engineering with technical indicators.",
+      problem: "Predict market movements using time series deep learning for profitable trading signals.",
+      tech: ["Python", "TensorFlow", "Pandas", "Jupyter", "Plotly"],
+      github: "https://github.com/sakshamgrg",
       demo: null,
-      highlights: ["Innovative", "Creative", "Experimental"]
+      highlights: ["Deep Learning", "Time Series", "Predictive Models"]
     }
   ],
 
@@ -140,35 +140,35 @@ export const portfolioData = {
   hackathons: [
     {
       id: 1,
-      name: "Web Development Competition",
+      name: "LexiScanAI Hackathon 🏆",
       year: 2024,
-      role: "Full-Stack Developer",
-      outcome: "Built complete portfolio in 48 hours",
-      tech: ["HTML", "CSS", "JavaScript"]
+      role: "Winner - AI/ML Legal Tech",
+      outcome: "WON HACKATHON with LexiScanAI project using machine learning for legal document analysis",
+      tech: ["Python", "Machine Learning", "NLP", "React", "AI Models"]
     },
     {
       id: 2,
-      name: "Webflow Challenge",
+      name: "GeeksforGeeks Hackathon",
       year: 2024,
-      role: "Webflow Developer",
-      outcome: "Created responsive landing page with custom code",
-      tech: ["Webflow", "Custom CSS", "JavaScript"]
+      role: "Participant - Algorithmic Challenge",
+      outcome: "Built AI trading algorithm using ensemble learning and gradient boosting",
+      tech: ["Python", "Scikit-learn", "XGBoost", "Backtrader"]
     },
     {
       id: 3,
-      name: "UI/UX Design Sprint",
-      year: 2023,
-      role: "UI/UX Designer",
-      outcome: "Designed modern web application interface",
-      tech: ["Figma", "Prototyping", "User Research"]
+      name: "Morgan Stanley Code for Good",
+      year: 2024,
+      role: "Finalist - Quantitative Analytics",
+      outcome: "Developed risk management dashboard with real-time VaR calculations",
+      tech: ["Python", "React", "PostgreSQL", "Risk Metrics"]
     },
     {
       id: 4,
-      name: "Code Innovation Lab",
-      year: 2023,
-      role: "Frontend Developer",
-      outcome: "Built interactive web experience",
-      tech: ["React", "Animations", "Tailwind"]
+      name: "MurFAI - IIT Bombay",
+      year: 2024,
+      role: "Participant - AI in Finance",
+      outcome: "Featured Project - RL trading agent using deep reinforcement learning",
+      tech: ["Python", "PyTorch", "OpenAI Gym", "DQN"]
     }
   ],
 
@@ -176,58 +176,58 @@ export const portfolioData = {
   certifications: [
     {
       id: 1,
-      name: "Advanced Web Development",
-      issuer: "Online Courses",
+      name: "Machine Learning for Trading",
+      issuer: "Georgia Tech (Udacity)",
       year: 2024,
-      skills: ["React", "Next.js", "Full Stack"]
+      skills: ["ML", "Trading", "Portfolio Optimization"]
     },
     {
       id: 2,
-      name: "Webflow Development",
-      issuer: "Webflow University",
+      name: "Algorithmic Trading & Finance Models",
+      issuer: "WorldQuant University",
       year: 2024,
-      skills: ["Webflow", "No-Code", "CMS"]
+      skills: ["Quant Finance", "Alpha Generation", "Systematic Trading"]
     },
     {
       id: 3,
-      name: "Machine Learning Fundamentals",
-      issuer: "Online Learning Platform",
-      year: 2024,
-      skills: ["Python", "ML", "AI"]
+      name: "Deep Learning Specialization",
+      issuer: "DeepLearning.AI (Coursera)",
+      year: 2023,
+      skills: ["Neural Networks", "LSTM", "Transformers"]
     },
     {
       id: 4,
-      name: "UI/UX Design Principles",
-      issuer: "Design Academy",
+      name: "Python for Financial Analysis",
+      issuer: "DataCamp",
       year: 2023,
-      skills: ["Design", "UX", "Figma"]
+      skills: ["Python", "Financial Data", "Time Series"]
     }
   ],
 
   // Research Interests
   research: {
-    title: "Focus Areas & Interests",
-    description: "Passionate about combining web development with emerging technologies. Currently exploring the intersection of Machine Learning, Artificial Intelligence, and modern web applications to create intelligent, user-friendly digital experiences.",
+    title: "Research & Focus Areas",
+    description: "Passionate about applying cutting-edge AI and machine learning to quantitative finance. Exploring reinforcement learning for trading, high-frequency trading systems, sentiment analysis for alpha generation, and advanced portfolio risk management techniques.",
     interests: [
       {
-        title: "Machine Learning & AI",
-        description: "Exploring ML models and AI integration in web applications for smarter user experiences.",
+        title: "Reinforcement Learning for Trading",
+        description: "Exploring Deep Q-Networks and PPO algorithms for automated trading decisions in volatile markets.",
         icon: "brain"
       },
       {
-        title: "Modern Web Development",
-        description: "Building fast, responsive, and beautiful web applications with cutting-edge technologies.",
-        icon: "code"
-      },
-      {
-        title: "UI/UX Innovation",
-        description: "Creating intuitive interfaces with smooth animations and delightful interactions.",
-        icon: "sparkles"
-      },
-      {
-        title: "Webflow Development",
-        description: "Leveraging no-code platforms with custom code for rapid, professional development.",
+        title: "High-Frequency Trading Systems",
+        description: "Research on low-latency execution systems, order book dynamics, and market microstructure.",
         icon: "zap"
+      },
+      {
+        title: "Sentiment-Driven Alpha Generation",
+        description: "Using NLP and transformer models to extract trading signals from alternative data sources.",
+        icon: "trending-up"
+      },
+      {
+        title: "Portfolio Risk Management",
+        description: "Advanced risk metrics, VaR calculations, and stress testing for institutional portfolios.",
+        icon: "shield"
       }
     ]
   },
@@ -243,9 +243,9 @@ export const portfolioData = {
 
   // Stats for About Section
   stats: {
-    projects: "15+",
-    experience: "2+ Years Learning",
+    projects: "15+ Full E2E Projects",
+    experience: "Vibe Coding Master",
     dedication: "100%",
-    skills: "20+"
+    skills: "Python | ML | Quant"
   }
 };
