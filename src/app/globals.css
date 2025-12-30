@@ -48,6 +48,21 @@ body {
   @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
 }
 
+/* Animated gradient text */
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 /* Glow effect */
 .glow {
   box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
@@ -63,6 +78,20 @@ body {
     linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
+}
+
+/* Pulse animation */
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* Section spacing */

@@ -1,67 +1,67 @@
 export const portfolioData = {
   // Hero Section
   hero: {
-    headline: "Building Intelligent Systems",
-    subheadline: "at the intersection of AI, code, and creativity.",
-    description: "AI/ML Engineer passionate about solving real-world problems through data-driven solutions and innovative technology.",
+    headline: "Hi, I'm Saksham",
+    subheadline: "Future Developer",
+    description: "Building tomorrow's digital experiences with clean code, innovative solutions, and cutting-edge technology. Specializing in creating any kind of website and web applications while expanding into Machine Learning and AI.",
     cta: {
-      primary: "View Projects",
+      primary: "View Work",
       secondary: "Download Resume",
-      tertiary: "Connect on LinkedIn"
+      tertiary: "Let's Talk"
     }
   },
 
   // About Section
   about: {
-    title: "About Me",
-    content: "I'm an AI/ML engineer focused on building intelligent systems that solve real problems. With a strong foundation in Python, machine learning frameworks, and full-stack development, I create data-driven solutions from concept to deployment. Active in hackathons, always learning, and driven by the challenge of turning complex data into actionable insights. Currently exploring the intersection of AI, quantitative systems, and automation."
+    title: "Crafting Digital Excellence",
+    content: "I'm a passionate developer who has mastered the art of creating any kind of website and web application. Currently expanding into Machine Learning and Artificial Intelligence while specializing in Webflow development. I'm working on exciting future projects that combine cutting-edge ML technology with seamless user experiences. I love Tailwind CSS and building innovative solutions that push the boundaries of what's possible."
   },
 
   // Skills Section
   skills: [
     {
-      category: "Programming",
+      category: "Frontend Development",
       items: [
-        { name: "Python", level: "Advanced", icon: "code-2" },
-        { name: "C++", level: "Intermediate", icon: "cpu" },
+        { name: "HTML5", level: "Advanced", icon: "code-2" },
+        { name: "CSS3", level: "Advanced", icon: "palette" },
         { name: "JavaScript", level: "Advanced", icon: "terminal" },
-        { name: "TypeScript", level: "Intermediate", icon: "file-code" }
+        { name: "Tailwind CSS", level: "Advanced", icon: "wind" }
       ]
     },
     {
-      category: "AI/ML",
-      items: [
-        { name: "NumPy", level: "Advanced", icon: "brain" },
-        { name: "Pandas", level: "Advanced", icon: "database" },
-        { name: "Scikit-learn", level: "Advanced", icon: "network" },
-        { name: "PyTorch", level: "Learning", icon: "zap" }
-      ]
-    },
-    {
-      category: "Web Development",
+      category: "Frameworks & Libraries",
       items: [
         { name: "React", level: "Advanced", icon: "layout" },
-        { name: "Next.js", level: "Advanced", icon: "layers" },
-        { name: "Tailwind CSS", level: "Advanced", icon: "palette" },
+        { name: "Next.js", level: "Intermediate", icon: "layers" },
+        { name: "Webflow", level: "Advanced", icon: "box" },
         { name: "Node.js", level: "Intermediate", icon: "server" }
       ]
     },
     {
-      category: "Tools & Platforms",
+      category: "Machine Learning & AI",
       items: [
-        { name: "Git/GitHub", level: "Advanced", icon: "git-branch" },
-        { name: "VS Code", level: "Advanced", icon: "code" },
-        { name: "Linux", level: "Intermediate", icon: "terminal-square" },
-        { name: "Docker", level: "Learning", icon: "box" }
+        { name: "Python", level: "Intermediate", icon: "code" },
+        { name: "TensorFlow", level: "Learning", icon: "brain" },
+        { name: "Data Science", level: "Learning", icon: "bar-chart" },
+        { name: "AI Models", level: "Learning", icon: "cpu" }
       ]
     },
     {
-      category: "Data & Analytics",
+      category: "Tools & Technologies",
       items: [
-        { name: "SQL", level: "Advanced", icon: "database" },
-        { name: "Data Visualization", level: "Advanced", icon: "bar-chart" },
-        { name: "Statistical Analysis", level: "Intermediate", icon: "trending-up" },
-        { name: "ETL Pipelines", level: "Intermediate", icon: "workflow" }
+        { name: "Git/GitHub", level: "Advanced", icon: "git-branch" },
+        { name: "VS Code", level: "Advanced", icon: "code" },
+        { name: "Figma", level: "Intermediate", icon: "layout-grid" },
+        { name: "Responsive Design", level: "Advanced", icon: "smartphone" }
+      ]
+    },
+    {
+      category: "Professional Skills",
+      items: [
+        { name: "Web Design", level: "Advanced", icon: "palette" },
+        { name: "UI/UX", level: "Advanced", icon: "sparkles" },
+        { name: "Problem Solving", level: "Advanced", icon: "lightbulb" },
+        { name: "Innovation", level: "Advanced", icon: "zap" }
       ]
     }
   ],
@@ -70,69 +70,69 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      category: "AI/ML",
-      name: "Sentiment Analysis Engine",
-      description: "Real-time sentiment analysis for social media data using NLP and deep learning.",
-      problem: "Analyze customer sentiment from thousands of reviews in real-time.",
-      tech: ["Python", "PyTorch", "NLP", "FastAPI", "Docker"],
-      github: "https://github.com/yourusername/sentiment-engine",
-      demo: "https://sentiment-demo.vercel.app",
-      highlights: ["95% accuracy", "Processes 10K reviews/min", "RESTful API"]
+      category: "Web Development",
+      name: "Modern Portfolio Website",
+      description: "A futuristic portfolio website with smooth animations, glassmorphism effects, and responsive design.",
+      problem: "Create an impressive digital presence with modern web technologies.",
+      tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Animations"],
+      github: "https://github.com/sakshamgrg",
+      demo: null,
+      highlights: ["15+ Projects", "Responsive Design", "Smooth Animations"]
     },
     {
       id: 2,
-      category: "AI/ML",
-      name: "Predictive Stock Analyzer",
-      description: "ML-powered stock price prediction using historical data and technical indicators.",
-      problem: "Predict stock trends using quantitative analysis and machine learning.",
-      tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib", "yFinance"],
-      github: "https://github.com/yourusername/stock-predictor",
+      category: "Webflow",
+      name: "Webflow Development Projects",
+      description: "Professional websites built with Webflow, combining no-code efficiency with custom code enhancements.",
+      problem: "Deliver high-quality websites quickly while maintaining full customization capabilities.",
+      tech: ["Webflow", "Custom CSS", "JavaScript", "Responsive Design"],
+      github: null,
       demo: null,
-      highlights: ["LSTM model", "Multi-timeframe analysis", "Backtesting engine"]
+      highlights: ["Fast Delivery", "Custom Animations", "Client Satisfaction"]
     },
     {
       id: 3,
-      category: "Hackathon",
-      name: "HealthTrack AI",
-      description: "AI-powered health assistant that analyzes symptoms and suggests potential diagnoses.",
-      problem: "Make preliminary health assessments accessible to everyone.",
-      tech: ["React", "Python", "TensorFlow", "Firebase", "Tailwind"],
-      github: "https://github.com/yourusername/healthtrack",
-      demo: "https://healthtrack-ai.vercel.app",
-      highlights: ["Won 2nd place", "24-hour build", "1000+ users"]
+      category: "Web App",
+      name: "Interactive Web Applications",
+      description: "Full-stack web applications with modern UI/UX and seamless user experiences.",
+      problem: "Build scalable applications that solve real-world problems.",
+      tech: ["React", "Next.js", "Tailwind CSS", "Node.js"],
+      github: null,
+      demo: null,
+      highlights: ["Full Stack", "Modern UI", "Scalable"]
     },
     {
       id: 4,
-      category: "Automation",
-      name: "Smart Task Scheduler",
-      description: "Intelligent task management system that prioritizes work using ML algorithms.",
-      problem: "Automate task prioritization based on deadlines, importance, and user behavior.",
-      tech: ["Python", "scikit-learn", "FastAPI", "PostgreSQL", "Redis"],
-      github: "https://github.com/yourusername/task-scheduler",
+      category: "Machine Learning",
+      name: "ML Integration Projects",
+      description: "Combining machine learning models with web applications for intelligent user experiences.",
+      problem: "Bridge the gap between ML capabilities and user-friendly interfaces.",
+      tech: ["Python", "TensorFlow", "JavaScript", "React", "APIs"],
+      github: null,
       demo: null,
-      highlights: ["Priority scoring", "Calendar sync", "Slack integration"]
+      highlights: ["AI-Powered", "Smart Features", "Future-Ready"]
     },
     {
       id: 5,
-      category: "Web App",
-      name: "DevConnect Platform",
-      description: "Developer networking platform with project matching and collaboration tools.",
-      problem: "Connect developers with complementary skills for hackathons and side projects.",
-      tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "NextAuth"],
-      github: "https://github.com/yourusername/devconnect",
-      demo: "https://devconnect.vercel.app",
-      highlights: ["500+ users", "Real-time chat", "AI matching"]
+      category: "UI/UX",
+      name: "Design System & Components",
+      description: "Reusable component library with modern design principles and accessibility focus.",
+      problem: "Maintain consistency across projects while speeding up development.",
+      tech: ["React", "Tailwind CSS", "TypeScript", "Storybook"],
+      github: null,
+      demo: null,
+      highlights: ["Reusable", "Accessible", "Documented"]
     },
     {
       id: 6,
-      category: "Automation",
-      name: "Data Pipeline Automator",
-      description: "Automated ETL pipeline for processing and analyzing large datasets.",
-      problem: "Streamline data collection, transformation, and analysis workflows.",
-      tech: ["Python", "Apache Airflow", "Pandas", "PostgreSQL", "Docker"],
-      github: "https://github.com/yourusername/data-pipeline",
+      category: "Innovation",
+      name: "Experimental Tech Projects",
+      description: "Cutting-edge experiments with new technologies and creative solutions.",
+      problem: "Push the boundaries of what's possible with web technologies.",
+      tech: ["Web3", "WebGL", "3D Graphics", "Animations"],
+      github: null,
       demo: null,
-      highlights: ["Processes 1M+ records", "Scheduled workflows", "Error handling"]
+      highlights: ["Innovative", "Creative", "Experimental"]
     }
   ],
 
@@ -140,35 +140,35 @@ export const portfolioData = {
   hackathons: [
     {
       id: 1,
-      name: "MLH Local Hack Day",
+      name: "Web Development Competition",
       year: 2024,
-      role: "Team Lead",
-      outcome: "1st Place - Built AI-powered study assistant",
-      tech: ["Python", "OpenAI API", "React"]
+      role: "Full-Stack Developer",
+      outcome: "Built complete portfolio in 48 hours",
+      tech: ["HTML", "CSS", "JavaScript"]
     },
     {
       id: 2,
-      name: "HackMIT",
+      name: "Webflow Challenge",
       year: 2024,
-      role: "Full-Stack Developer",
-      outcome: "Finalist - Created real-time collaboration tool",
-      tech: ["Next.js", "WebRTC", "Firebase"]
+      role: "Webflow Developer",
+      outcome: "Created responsive landing page with custom code",
+      tech: ["Webflow", "Custom CSS", "JavaScript"]
     },
     {
       id: 3,
-      name: "AI for Good Hackathon",
+      name: "UI/UX Design Sprint",
       year: 2023,
-      role: "ML Engineer",
-      outcome: "2nd Place - Health diagnosis assistant",
-      tech: ["TensorFlow", "Flask", "React"]
+      role: "UI/UX Designer",
+      outcome: "Designed modern web application interface",
+      tech: ["Figma", "Prototyping", "User Research"]
     },
     {
       id: 4,
-      name: "TreeHacks Stanford",
+      name: "Code Innovation Lab",
       year: 2023,
-      role: "Backend Developer",
-      outcome: "Built prototype for sustainability tracker",
-      tech: ["Python", "FastAPI", "PostgreSQL"]
+      role: "Frontend Developer",
+      outcome: "Built interactive web experience",
+      tech: ["React", "Animations", "Tailwind"]
     }
   ],
 
@@ -176,57 +176,57 @@ export const portfolioData = {
   certifications: [
     {
       id: 1,
-      name: "Machine Learning Specialization",
-      issuer: "Stanford Online (Coursera)",
+      name: "Advanced Web Development",
+      issuer: "Online Courses",
       year: 2024,
-      skills: ["ML Algorithms", "Neural Networks", "Python"]
+      skills: ["React", "Next.js", "Full Stack"]
     },
     {
       id: 2,
-      name: "Deep Learning Specialization",
-      issuer: "deeplearning.ai",
+      name: "Webflow Development",
+      issuer: "Webflow University",
       year: 2024,
-      skills: ["CNN", "RNN", "Transformers"]
+      skills: ["Webflow", "No-Code", "CMS"]
     },
     {
       id: 3,
-      name: "Full-Stack Web Development",
-      issuer: "freeCodeCamp",
-      year: 2023,
-      skills: ["React", "Node.js", "APIs"]
+      name: "Machine Learning Fundamentals",
+      issuer: "Online Learning Platform",
+      year: 2024,
+      skills: ["Python", "ML", "AI"]
     },
     {
       id: 4,
-      name: "Data Structures & Algorithms",
-      issuer: "Princeton University",
+      name: "UI/UX Design Principles",
+      issuer: "Design Academy",
       year: 2023,
-      skills: ["DSA", "Problem Solving", "Optimization"]
+      skills: ["Design", "UX", "Figma"]
     }
   ],
 
   // Research Interests
   research: {
-    title: "Research & Interests",
-    description: "Exploring the convergence of AI, quantitative systems, and real-world applications. Passionate about leveraging data-driven approaches to solve complex problems in finance, healthcare, and automation.",
+    title: "Focus Areas & Interests",
+    description: "Passionate about combining web development with emerging technologies. Currently exploring the intersection of Machine Learning, Artificial Intelligence, and modern web applications to create intelligent, user-friendly digital experiences.",
     interests: [
       {
-        title: "Quantitative Finance",
-        description: "Applying ML to trading strategies, risk management, and market prediction.",
-        icon: "trending-up"
+        title: "Machine Learning & AI",
+        description: "Exploring ML models and AI integration in web applications for smarter user experiences.",
+        icon: "brain"
       },
       {
-        title: "AI Systems",
-        description: "Building scalable, efficient ML pipelines and production systems.",
-        icon: "cpu"
+        title: "Modern Web Development",
+        description: "Building fast, responsive, and beautiful web applications with cutting-edge technologies.",
+        icon: "code"
       },
       {
-        title: "Data Science",
-        description: "Extracting insights from large datasets using statistical methods and visualization.",
-        icon: "bar-chart"
+        title: "UI/UX Innovation",
+        description: "Creating intuitive interfaces with smooth animations and delightful interactions.",
+        icon: "sparkles"
       },
       {
-        title: "Automation",
-        description: "Creating intelligent automation tools to optimize workflows and decision-making.",
+        title: "Webflow Development",
+        description: "Leveraging no-code platforms with custom code for rapid, professional development.",
         icon: "zap"
       }
     ]
@@ -234,10 +234,18 @@ export const portfolioData = {
 
   // Social Links
   social: {
-    github: "https://github.com/yourusername",
-    linkedin: "https://linkedin.com/in/yourusername",
-    twitter: "https://twitter.com/yourusername",
-    email: "your.email@example.com",
+    github: "https://github.com/sakshamgrg",
+    linkedin: "https://www.linkedin.com/in/sakshamgrg",
+    twitter: "https://twitter.com/sakshamgrg",
+    email: "grgsaksham25@gmail.com",
     resume: "/resume.pdf"
+  },
+
+  // Stats for About Section
+  stats: {
+    projects: "15+",
+    experience: "2+ Years Learning",
+    dedication: "100%",
+    skills: "20+"
   }
 };
