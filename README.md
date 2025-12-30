@@ -37,25 +37,42 @@ npm install
 
 Edit `src/data/portfolio.ts` with your information:
 
-- Lines 3-11: Hero section
+- Lines 3-12: Hero section (name, title, description)
 - Lines 14-17: About section
-- Lines 20-65: Skills
-- Lines 68-145: Projects (replace with yours!)
-- Lines 148-183: Hackathons
-- Lines 186-223: Certifications
-- Lines 257-263: Social links (IMPORTANT!)
+- Lines 20-70: Skills (5 categories)
+- Lines 72-130: Projects (4 real projects + 2 optional)
+- Lines 132-165: Hackathons (3 entries)
+- Lines 167-230: Agency business services
+- Lines 232-245: Social links (IMPORTANT!)
 
-### Step 3: Add Your Resume
-
-Place your `resume.pdf` file in the `public/` folder.
-
-### Step 4: Run Development Server
+### Step 3: Run Development Server
 
 ```bash
 npm run dev
 ```
 
 Open http://localhost:3000 to view your portfolio!
+
+### Step 4: Deploy (Optional)
+
+**Easiest: Deploy to Vercel in 2 minutes**
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+
+# Production
+vercel --prod
+```
+
+**Or use the deployment scripts:**
+- Windows: Double-click `deploy.bat`
+- Mac/Linux: Run `./deploy.sh`
+
+See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for detailed instructions.
 
 ## Design Features
 
