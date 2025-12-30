@@ -2,11 +2,11 @@ export const portfolioData = {
   // Hero Section
   hero: {
     headline: "Hi, I'm Saksham",
-    subheadline: "Vibe Coder | AI/ML Engineer → Quant Developer",
-    description: "Built 15+ full end-to-end projects from scratch. Currently mastering Python, NumPy, Pandas, Scikit-learn, PyTorch, Jupyter, C++, and quantitative finance to dominate the trading world with intelligent algorithms.",
+    subheadline: "Vibe Coder → Quant Developer",
+    description: "Built 15+ full end-to-end projects. Currently mastering Python, ML fundamentals, and quantitative finance to build intelligent trading systems.",
     cta: {
       primary: "View Projects",
-      secondary: "Download Resume",
+      secondary: "My Agency",
       tertiary: "Let's Talk"
     }
   },
@@ -111,28 +111,6 @@ export const portfolioData = {
       github: "https://github.com/sakshamgrg",
       demo: "https://law-mind.vercel.app/",
       highlights: ["🔮 Future Project", "AI Assistant", "Legal Tech"]
-    },
-    {
-      id: 5,
-      category: "Algorithmic Trading",
-      name: "Mean Reversion Trading Bot",
-      description: "Quantitative trading bot implementing mean reversion with Bollinger Bands and RSI. Automated backtesting with risk management.",
-      problem: "Exploit statistical arbitrage opportunities with automated execution and risk controls.",
-      tech: ["Python", "Backtrader", "NumPy", "Matplotlib", "SQL"],
-      github: "https://github.com/sakshamgrg",
-      demo: null,
-      highlights: ["18% Annual Return", "Sharpe 1.8", "12% Max DD"]
-    },
-    {
-      id: 6,
-      category: "AI/ML Trading",
-      name: "LSTM Price Prediction System",
-      description: "Deep learning model using LSTM networks to predict stock price movements. Feature engineering with technical indicators.",
-      problem: "Predict market movements using time series deep learning for profitable trading signals.",
-      tech: ["Python", "TensorFlow", "Pandas", "Jupyter", "Plotly"],
-      github: "https://github.com/sakshamgrg",
-      demo: null,
-      highlights: ["Deep Learning", "Time Series", "Predictive Models"]
     }
   ],
 
@@ -156,14 +134,6 @@ export const portfolioData = {
     },
     {
       id: 3,
-      name: "Morgan Stanley Code for Good",
-      year: 2024,
-      role: "Finalist - Quantitative Analytics",
-      outcome: "Developed risk management dashboard with real-time VaR calculations",
-      tech: ["Python", "React", "PostgreSQL", "Risk Metrics"]
-    },
-    {
-      id: 4,
       name: "MurFAI - IIT Bombay",
       year: 2024,
       role: "Participant - AI in Finance",
@@ -172,37 +142,57 @@ export const portfolioData = {
     }
   ],
 
-  // Certifications Section
-  certifications: [
-    {
-      id: 1,
-      name: "Machine Learning for Trading",
-      issuer: "Georgia Tech (Udacity)",
-      year: 2024,
-      skills: ["ML", "Trading", "Portfolio Optimization"]
+  // Agency Business
+  agency: {
+    title: "Saksham's Digital Agency",
+    tagline: "Building Tomorrow's Digital Solutions",
+    description: "Full-service digital agency specializing in cutting-edge web development, AI automation, and creative design. From concept to deployment, we craft premium digital experiences.",
+    services: [
+      {
+        id: 1,
+        icon: "code",
+        name: "Website Development",
+        description: "Custom websites & web applications built with React, Next.js, and modern tech stack",
+        features: ["Responsive Design", "SEO Optimized", "Lightning Fast", "Full-Stack Solutions"]
+      },
+      {
+        id: 2,
+        icon: "smartphone",
+        name: "App Development",
+        description: "Cross-platform mobile applications with seamless UX and powerful backends",
+        features: ["iOS & Android", "Real-time Features", "API Integration", "Cloud Backend"]
+      },
+      {
+        id: 3,
+        icon: "palette",
+        name: "Thumbnail & Graphic Design",
+        description: "Eye-catching thumbnails, social media graphics, and brand identity design",
+        features: ["YouTube Thumbnails", "Social Media Posts", "Brand Identity", "UI/UX Design"]
+      },
+      {
+        id: 4,
+        icon: "brain",
+        name: "AI Agents & Automation",
+        description: "Custom AI agents, chatbots, and automation solutions powered by machine learning",
+        features: ["AI Chatbots", "Automation Tools", "ML Integration", "Custom AI Models"]
+      },
+      {
+        id: 5,
+        icon: "zap",
+        name: "End-to-End Solutions",
+        description: "Complete digital transformation from ideation to deployment and maintenance",
+        features: ["Full Project Management", "Cloud Deployment", "Ongoing Support", "Scalable Infrastructure"]
+      }
+    ],
+    pricing: {
+      note: "Flexible pricing based on project scope and requirements",
+      contact: "Get a custom quote tailored to your needs"
     },
-    {
-      id: 2,
-      name: "Algorithmic Trading & Finance Models",
-      issuer: "WorldQuant University",
-      year: 2024,
-      skills: ["Quant Finance", "Alpha Generation", "Systematic Trading"]
-    },
-    {
-      id: 3,
-      name: "Deep Learning Specialization",
-      issuer: "DeepLearning.AI (Coursera)",
-      year: 2023,
-      skills: ["Neural Networks", "LSTM", "Transformers"]
-    },
-    {
-      id: 4,
-      name: "Python for Financial Analysis",
-      issuer: "DataCamp",
-      year: 2023,
-      skills: ["Python", "Financial Data", "Time Series"]
-    }
-  ],
+    cta: "Let's Build Something Amazing"
+  },
+
+  // Certifications Section (Optional - can be hidden)
+  certifications: [],
 
   // Research Interests
   research: {

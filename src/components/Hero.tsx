@@ -70,14 +70,12 @@ export default function Hero() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
 
-              <a
-                href={portfolioData.social.resume}
-                download
-                className="px-8 py-4 border-2 border-border hover:border-primary/50 text-foreground font-semibold rounded-lg hover:bg-primary/5 transition-all duration-300 flex items-center gap-2"
+              <button
+                onClick={() => scrollToSection("agency")}
+                className="px-8 py-4 bg-gradient-to-r from-accent to-primary text-background font-semibold rounded-lg hover:shadow-lg hover:shadow-accent/50 transition-all duration-300 flex items-center gap-2 animate-pulse-slow"
               >
-                <Download className="w-5 h-5" />
-                {hero.cta.secondary}
-              </a>
+                💼 {hero.cta.secondary}
+              </button>
             </motion.div>
 
             {/* Social Links */}
