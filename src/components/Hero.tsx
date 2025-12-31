@@ -43,7 +43,16 @@ export default function Hero() {
               transition={{ delay: 0.2 }}
               className="inline-block px-4 py-2 mb-6 text-sm font-mono border border-primary/30 rounded-full bg-primary/10"
             >
-              � AI/ML Engineer → Quant Developer
+              AI ML Engineer
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="inline-block px-4 py-2 mb-6 text-sm font-mono border border-primary/30 rounded-full bg-primary/10 ml-3"
+            >
+              VIBE CODER | QUANT DEVELOPER
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight">
